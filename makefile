@@ -70,9 +70,6 @@ out/SCGL.o: SCGL.cpp
 	${OPTAG}$(CPP) -c SCGL.cpp -o out/SCGL.o $(CXXFLAGS)
 
 commit: prepare
-	${GIT} checkout release
-	${GIT} add ./release/SCGL.zip -f
-	${GIT} add ./release/version.info -f
 	${GIT} checkout master
 	${GIT} add -A
 	${GIT} commit
