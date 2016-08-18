@@ -1,3 +1,9 @@
+# Release/out directories (we dont need to publish them with code)
+release/
+out/
+*log*
+*stackdump*
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
