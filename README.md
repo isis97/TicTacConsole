@@ -17,15 +17,17 @@ Build process involves invoking  `make`, `gcc` (or `g++`) and `git` tools.
 Build process is supported on Windows (on Linux it could be possible to easily cross-compile sources, but we recommend **building on Windows**)
 
 To build release do the following steps:
-1. Go to the location where build will take place by using `cd <path>` command.
-2. `git clone https://github.com/isis97/TicTacConsole`
-3. `cd TicTacConsole`
-4. `make`
-5. `make start` to execute compiled files
-6. `make clean` (if you want to rebuild everything)
-7. `make commit` (when you want to commit changes to the remote repo)
 
-After doing `make` you can find in the `out/` directory all release files and in the `release/` zipped release-ready version of built software.  
+ 1. Go to the location where build will take place by using `cd <path>` command.
+ 2. `git clone https://github.com/isis97/TicTacConsole`
+ 3. `cd TicTacConsole`
+ 4. `make`
+ 5. `make start` to execute compiled files
+ 6. `make clean` (if you want to rebuild everything)
+ 7. `make commit` (when you want to commit changes to the remote repo)
+
+After doing `make` you can find in the `out/` directory all release files
+ and in the `release/` zipped release-ready version of built software.  
 
 [badge support windows]: https://img.shields.io/badge/platform-windows-blue.svg?style=flat-square&logoWidth=20&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA%2FwD%2FAP%2BgvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJTUUH4AgSEisSipueyAAAAHBJREFUSMdjZKA2WPv%2BPzKXkSxDiuf%2FZ7AKIEopbgsW3v%2FPwCOA4AcLMqK7jhjAQo4mUgATA43BqAWjFlADiCvQ1HjsuXNJIwPD%2BgmMtLMAGyCzqBhNRaMWDAELWBiCBRmJrcDJy2hUaj1Q3wIiLQcAUjQgoD1kMJYAAAAASUVORK5CYII%3D
 

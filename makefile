@@ -1,5 +1,7 @@
 # Project: SCGL
 
+VERSION = 3.1
+
 ROOT_DIR := $(CURDIR)
 
 CPP      = g++
@@ -18,9 +20,10 @@ OPTAG = @
 GIT = git
 START = ./out/SCGL.exe
 
-.PHONY: all all-before all-after clean clean-custom
+.PHONY: prepare all all-before all-after clean clean-custom
 
-all: all-before $(BIN) all-after build-assets
+all: prepare all-before $(BIN) all-after build-assets
+
 
 prepare:
 	${OPTAG}echo "[INIT] Preparing directory layout..."
@@ -49,7 +52,7 @@ build-assets: prepare
 	${OPTAG}cp ./version/version.info ./release/version.info
 	${OPTAG}echo "[DONE] Build done."
 
-clean: clean-custom
+clean: prepare clean-custom
 	${OPTAG}echo "[CLEANING] Cleaning build..."
 	${OPTAG}${RM} $(OBJ) $(BIN)
 	${OPTAG}${RM} ./out/**/*
@@ -66,10 +69,14 @@ out/SCGL.o: SCGL.cpp
 	${OPTAG}echo "[INFO] $(CPP) -c SCGL.cpp -o out/SCGL.o $(CXXFLAGS)"
 	${OPTAG}$(CPP) -c SCGL.cpp -o out/SCGL.o $(CXXFLAGS)
 
-commit:
+commit: prepare
+	${GIT} checkout release
+	${GIT} add ./release/SCGL.zip -f
+	${GIT} add ./release/version.info -f
+	${GIT} checkout master
 	${GIT} add -A
 	${GIT} commit
-	${GIT} push
+	${GIT} push --all -u
 
 start:
 	${START}
