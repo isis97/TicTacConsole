@@ -15,6 +15,7 @@ Based on [WACCGL Library][link waccgl].
 
 ## Installation/Usage
 **[Download latest release from here.][link download latest]**
+Then unzip it. Move the application files somewhere and run `SCGL.exe` file.
 
 The game is n-dimensional classic tic-tac-toe game.
 Let's have some fun.
