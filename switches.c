@@ -1,3 +1,5 @@
+#define VERSION_CONTROL_FILE_URL "https://raw.githubusercontent.com/isis97/TicTacConsole/release/release/version.info"
+
 #define SWITCH_NEVER_PHYSICALLY_INSTALL_UPDATE NO
 #define SWITCH_PLAY_MUSIC_BY_DEFAULT YES
 #define SWITCH_USER_CANNOT_MOVE NO

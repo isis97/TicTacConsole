@@ -3,13 +3,14 @@
 ![Platform - Windows][badge support windows]
 
 # TickTackConsole game
-Based on [WACCGL Library](link waccgl).
+Based on [WACCGL Library][link waccgl].
 
 **NOTE: This software supports ONLY Windows**
 
 ## Installation/Usage
-**TODO Write installation/usage guide**
-
+Download latest release from [here][link download latest].
+The game is n-dimensional classic tic-tac-toe game.
+Let's have some fun. Launch it! :p
 
 ## Building
 Build process involves invoking  `make`, `gcc` (or `g++`) and `git` tools.
@@ -35,3 +36,4 @@ After doing `make` you can find in the `out/` directory all release files
 
 [link sts]: https://github.com/isis97
 [link waccgl]: https://github.com/isis97/waccgl
+[link download latest]: https://github.com/isis97/TicTacConsole/raw/release/release/SCGL.zip

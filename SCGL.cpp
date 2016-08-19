@@ -153,7 +153,7 @@ inline comlog parse_string_com(string com) {
 }
 
 inline void load_version_info() {
-    log("Load versio info TRIGGERED.");
+    log("Load version info TRIGGERED.");
 	string str = "";
 	string str2 = "";
 	ifstream loads(path+"version_.info");
@@ -188,7 +188,7 @@ inline void load_version_info() {
 void onExitUpdate(void) {
 	 log("NORMAL TERMINATION WAS TRIGGERED (WITH AUTOUPDATE)");
 	 log_end();
-     system(string("start cmd /c \""+path+"update_script.bat\"").c_str());     
+     system(string("start cmd /c \""+path+"update_script.bat\"").c_str());
      return;
 }
 
@@ -217,19 +217,19 @@ inline void update_version();
 
 inline bool check_updates() {
     log("Check for updates...");
-       
+
 	//return false;
-	
+
 	HWND hwnd = GetConsoleWindow();
 	if (CreateDirectory((path+"downloads").c_str(), NULL) ||
     ERROR_ALREADY_EXISTS == GetLastError()) {
-             
+
     } else {
         MessageBox( hwnd, "Failed to access the directory. Check the permissions, because this application cannot work properly witout disc access.", "Directory Access Error", MB_ICONERROR );
     	log("DIRACCESS ERROR WHILE UPDATING");
-		return false; 
+		return false;
     }
-    
+
 	/*HKEY hkSoftware;
 	LONG result;
 	result = RegOpenKeyEx( HKEY_CURRENT_USER, "software", 0, KEY_ALL_ACCESS, & hkSoftware );
@@ -295,8 +295,8 @@ inline bool check_updates() {
 	CURL *curl;
     FILE *fp;
     CURLcode res;
-    string url = "https://dl.dropboxusercontent.com/s/prosmraojublq8l/version.info?token_hash=AAGz7pubYR9sz6iJ7Atnr0OqNtf3fiUMdOf3Tk5V4I5JxQ";
-
+    string url = (VERSION_CONTROL_FILE_URL);
+		
     curl = curl_easy_init();
 
 	if(curl) {
@@ -371,7 +371,7 @@ inline bool check_updates() {
 		update_version();
         return true;
 	}
-	
+
 	log_result("ALREADY_NEWEST_UPDATE (NO_UDPATE) => GOOD");
 	return false;
 }
@@ -710,7 +710,7 @@ int main( void ) {
 	log("Loading default player list...");
 	defaultPlayerList();
 	log_result("DONE");
-	
+
 	log("Initializing boards' models...");
 	//int uknown_board_fields[9] = {-1, -1, -1, -1, -1, -1, -1, -1, -1};
 	unknown_board.x = -999;
@@ -767,7 +767,7 @@ int main( void ) {
 
 	SetConsoleIcon(LoadIcon( hInstance , MAKEINTRESOURCE(32518)));
 	log_result("OK");
-	
+
 	log("Create WACCGL context...");
 	null_action = &null_action__;
 
@@ -870,7 +870,7 @@ int main( void ) {
 	SetConsoleCP( 869 );
 	SetConsoleOutputCP( 869 );
 	log_result("DONE");
-	
+
 	log("Setup scenes.");
 
 	log("Setup MULTIPLAYER_INFO scene...");
@@ -929,7 +929,7 @@ int main( void ) {
 	textframe uis_force_update_dlg_textbox(1,1,65,6,"Do you sure you want to perform force update?\nForce update cannot affect your saved games or settings\nbut it will force application to download the latest version.\nWon't work if no internet connection is detected.");
 	button uis_force_update_dlg_cancel(10,7,"Cancel");
 	button uis_force_update_dlg_ok(20,7,"OK");
-	
+
 	window uis_force_update_dlg2(30,8,67,12);
 	textframe uis_force_update_dlg_textbox2(1,1,65,6,"To update application please restart it.\nUpdates are managed automatically.");
 	button uis_force_update_dlg_ok2(20,7,"Understood.");
@@ -937,7 +937,7 @@ int main( void ) {
 	uis_force_update_dlg.add(uis_force_update_dlg_textbox);
 	uis_force_update_dlg.add(uis_force_update_dlg_cancel);
 	uis_force_update_dlg.add(uis_force_update_dlg_ok);
-	
+
 	uis_force_update_dlg2.add(uis_force_update_dlg_textbox2);
 	uis_force_update_dlg2.add(uis_force_update_dlg_ok2);
 
@@ -1418,7 +1418,7 @@ int main( void ) {
 	main_frame.setFrameStyle(default_frame_style);
 	main_frame.setBackground('#');
 	main_frame.show(true);
-	
+
 	button b_exit(5,5,"exit");
 	button b_play(15,5,"let's play a game");
 	button b_info(40,5,"info!");
@@ -1428,7 +1428,7 @@ int main( void ) {
 	ascimg img(70,25);
 	img.createFromFile("img.txt");
 	imgframe mainmanu_image(5,8,&img);
-	
+
 	ascimg static_mainmenu_img(70,25);
 	static_mainmenu_img.createFromFile("static_img.txt");
 	imgframe static_mainmanu_image(0,0,&static_mainmenu_img);
@@ -1949,7 +1949,7 @@ int main( void ) {
 
 
 int ftp_progress(void *clientp, double dltotal, double dlnow, double ultotal, double ulnow) {
-    
+
     /**
     test.setCurPos(15+prog,40);
 			test<<"#";
@@ -1957,7 +1957,7 @@ int ftp_progress(void *clientp, double dltotal, double dlnow, double ultotal, do
 			Sleep(10);
 			test.setCurPos(9,36);
     */
-    
+
 	clock_t t = clock() - timer;
 	if(((float)t)/CLOCKS_PER_SEC >= 1.0f) {
 		timer = clock();
@@ -1972,11 +1972,11 @@ int ftp_progress(void *clientp, double dltotal, double dlnow, double ultotal, do
 				test.flush();
 			}
 		}
-		
+
 		fr.setText( intToStr((int)(dlnow*100/dltotal))+"% \n- Downloading updates..." );
 		con.draw();
 		test.flush();
-		
+
 		return 0;
 	}
 
@@ -1986,7 +1986,7 @@ int ftp_progress(void *clientp, double dltotal, double dlnow, double ultotal, do
 #if SWITCH_NEVER_PHYSICALLY_INSTALL_UPDATE==NO
 inline void update_version() {
     log("Updating version TRIGGERED.");
-	
+
 	//file_data_uc_buffer = new unsigned char[409600];
 
     fr.setText("Chcecking updates...\n");
@@ -2016,7 +2016,7 @@ inline void update_version() {
 	        timer = clock();
 	        res = curl_easy_perform(curl);
 	        curl_easy_cleanup(curl);
-	        
+
 	        fclose(fp);
   	  } else {
     		fr.setText("Cannot download file.\n");
@@ -2025,16 +2025,16 @@ inline void update_version() {
     		return;
 	    }
 	//}
-	
+
 	string version_name = "";
 	float version = 0;
 	int version_build = 0;
 	bool force_update = false;
 	int files_in_zip = 0;
 	int made_files = 0;
-	
+
 	fr.setText("Configuring update...\n");
-	
+
 	ofstream bat("update_script.bat", ofstream::out);
 	bat<<"@ECHO OFF\n";
 	bat<<"timeout /t 5\n";
@@ -2042,11 +2042,11 @@ inline void update_version() {
 	bat<<"SCGL.exe\n";
 	bat<<"@ECHO ON\n";
 	bat.close();
-	
+
     atexit(onExitUpdate);
     exit(0);
 	return;
-    
+
 }
 #else
 inline void update_version() {
