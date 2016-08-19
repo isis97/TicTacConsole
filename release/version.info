@@ -1,6 +1,6 @@
 version_name=alpha
-version=3.1
-url=[https://dl.dropboxusercontent.com/s/u7f0ezyzfoul622/SCGL.zip?token_hash=AAEq-SCHcmusgOs9SBUG7_3GWcniCpPBmGgJvHSkItFtsw]
-version_build=0011
-version_date=[20,12,2015]
+version=3.3
+url=[https://github.com/isis97/TicTacConsole/raw/release/release/SCGL.zip]
+version_build=0001
+version_date=[19,08,2016]
 force_update=false
