@@ -54,7 +54,7 @@ After doing `make` you can find in the `out/` directory all release files
 [screenshot 1]: https://raw.githubusercontent.com/isis97/TicTacConsole/master/screenshots/game.png
 [screenshot 2]: https://raw.githubusercontent.com/isis97/TicTacConsole/master/screenshots/info_screen.png
 
-[link isis97]: https://github.com/isis97/
-[link sts]: https://github.com/isis97
+[link isis97]: http://styczynski.ml
+[link sts]: http://styczynski.ml
 [link waccgl]: https://github.com/isis97/waccgl
 [link download latest]: https://github.com/isis97/TicTacConsole/raw/release/release/SCGL.zip
